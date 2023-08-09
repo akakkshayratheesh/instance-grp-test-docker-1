@@ -1,0 +1,5 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'asia-south1-docker.pkg.dev/its-ak-392515/test-repo-ak/test-nginx:latest', '.' ]
+images:
+- 'asia-south1-docker.pkg.dev/its-ak-392515/test-repo-ak/test-nginx:latest'
