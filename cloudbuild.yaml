@@ -1,11 +1,10 @@
 options:
   logging: CLOUD_LOGGING_ONLY
-timeout: 15m
 steps:
-  - id: describe-deployment
-    name: "gcr.io/cloud-builders/gcloud"
-    script: |
-      #!/bin/bash
-      gcloud beta compute instance-groups managed rolling-action start-update ingrp-1 --project=its-ak-392515 --type='proactive' --max-surge=0 --max-unavailable=1 --min-ready=0 --minimal-action='restart' --most-disruptive-allowed-action='' --replacement-method='substitute' --version=template=https://www.googleapis.com/compute/beta/projects/its-ak-392515/global/instanceTemplates/temp-l3 --zone=asia-south1-c
-
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'asia-south1-docker.pkg.dev/its-ak-392515/test-repo-ak/test-nginx:latest', '.' ]
+images:
+- 'asia-south1-docker.pkg.dev/its-ak-392515/test-repo-ak/test-nginx:latest' 
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: [ 'compute', 'instance-groups', 'managed', 'rolling-action', 'restart ingrp-1', '--zone=asia-south1-c' ]
 
