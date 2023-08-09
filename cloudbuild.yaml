@@ -3,8 +3,8 @@ options:
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'asia-south1-docker.pkg.dev/its-ak-392515/test-repo-ak/test-nginx:latest', '.' ]
-images:
-  - 'asia-south1-docker.pkg.dev/its-ak-392515/test-repo-ak/test-nginx:latest' 
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'push', 'asia-south1-docker.pkg.dev/its-ak-392515/test-repo-ak/test-nginx:latest' ]
 
 - name: 'gcr.io/cloud-builders/gcloud'
   args: [ 'compute', 'instance-groups', 'managed', 'rolling-action', 'restart', 'ingrp-1', '--zone=asia-south1-c' ]
