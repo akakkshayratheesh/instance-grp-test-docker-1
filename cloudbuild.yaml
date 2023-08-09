@@ -5,3 +5,24 @@ steps:
   args: [ 'build', '-t', 'asia-south1-docker.pkg.dev/its-ak-392515/test-repo-ak/test-nginx:latest', '.' ]
 images:
 - 'asia-south1-docker.pkg.dev/its-ak-392515/test-repo-ak/test-nginx:latest'
+
+- name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+  entrypoint: "gcloud beta"
+  args:
+    - "compute"
+    - "instance-groups"
+    - "managed"
+    - "rolling-action"
+    - "start-update"
+    - "ingrp-1"
+    - "--project=its-ak-392515"
+    - "--type='proactive'"
+    - "--max-surge=0"
+    - "--max-unavailable=1"
+    - "--min-ready=0"
+    - "--minimal-action='restart'"
+    - "--most-disruptive-allowed-action=''"
+    - "--replacement-method='substitute'"
+    - "--version=template=https://www.googleapis.com/compute/beta/projects/its-ak-392515/global/instanceTemplates/temp-l3"
+    - "--zone=asia-south1-c"
+  
