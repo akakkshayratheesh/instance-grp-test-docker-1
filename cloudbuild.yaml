@@ -7,7 +7,7 @@ images:
 - 'asia-south1-docker.pkg.dev/its-ak-392515/test-repo-ak/test-nginx:latest'
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  entrypoint: 'beta'
+  entrypoint: 'bash'
   args:
   - '-c'
   -  |
