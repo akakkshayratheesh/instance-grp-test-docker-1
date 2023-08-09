@@ -6,5 +6,11 @@ steps:
   args: [ 'build', '-t', 'asia-south1-docker.pkg.dev/its-ak-392515/test-repo-ak/test-nginx:latest', '.' ]
 images:
 - 'asia-south1-docker.pkg.dev/its-ak-392515/test-repo-ak/test-nginx:latest'
+- id: describe-deployment
+  name: "gcr.io/cloud-builders/gcloud"
+  script: |
+    #!/bin/bash
+    #source /workspace/lib/bash_utils.sh
+    echo "akshay"
 
 
