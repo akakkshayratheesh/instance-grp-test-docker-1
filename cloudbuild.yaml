@@ -7,12 +7,12 @@ steps:
     - "-c"
     - |
         echo "testing stage"
-        echo ${GCP_TEMP_INSTANCE_NAME}
+        echo ${_GCP_TEMP_INSTANCE_NAME}
         
         gcloud compute instances create akshaytemp6 --project=its-ak-392515 --zone=us-central1-c --machine-type=e2-medium --network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=default --maintenance-policy=MIGRATE --provisioning-model=STANDARD --service-account=415800680409-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --tags=akshaytemptag --create-disk=auto-delete=yes,boot=yes,device-name=akshaytemp6,image=projects/its-ak-392515/global/images/akshayimage,mode=rw,size=10,type=projects/its-ak-392515/zones/us-central1-c/diskTypes/pd-balanced --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --labels=ec-src=vm_add-gcloud --reservation-affinity=any
 
 substitutions:
-    GCP_TEMP_INSTANCE_NAME: akshaytemp6
+    _GCP_TEMP_INSTANCE_NAME: akshaytemp6
 
 
         
