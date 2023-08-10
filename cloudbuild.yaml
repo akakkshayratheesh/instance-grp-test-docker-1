@@ -3,11 +3,12 @@ options:
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: "bash"
+  --substitutions=GCP_INSTANCE_NAME="akshayone"
   args:
     - "-c"
     - |
         echo "testing stage"
-        GCP_INSTANCE_NAME="akshayone"
+        
         GCP_TEMP_INSTANCE_NAME=akshaytemp6
         GCP_TEMP_SERVICE_AC=415800680409-compute@developer.gserviceaccount.com
         GCP_TEMP_TAG=akshaytemptag
