@@ -39,8 +39,7 @@ steps:
     - "-c"
     - |
         echo "testing stage"
-        gcloud compute instance-groups managed set-instance-template ingrp-1 --template=akshaytemprscore-cf275a6a-701a-4c33-9185-be1da8ce88a6 --zone=asia-south1-c
-        
+        gcloud compute instance-groups managed set-instance-template ${_GCP_INSTANCE_GROUP_NAME} --template=${_GCP_INSTANCE_TEMPLATE_NAME}-$BUILD_ID --zone=${_GCP_INSTANCE_GROUP_ZONE}        
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: "bash"
   args:
