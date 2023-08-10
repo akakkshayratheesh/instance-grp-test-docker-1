@@ -52,9 +52,9 @@ steps:
 
 
 substitutions:
-    _GCP_TEMP_INSTANCE_NAME: akshaytemp8
+
     _GCP_INSTANCE_NAME: akshaytemp8
-    _GCP_TEMP_INSTANCE_NAME: akshaytemp6
+    _GCP_TEMP_INSTANCE_NAME: akshaytemp8
     _GCP_TEMP_SERVICE_AC: 415800680409-compute@developer.gserviceaccount.com
     _GCP_TEMP_TAG: akshaytemptag
     _GCP_CUSTOM_IMAGE: akshayimage
