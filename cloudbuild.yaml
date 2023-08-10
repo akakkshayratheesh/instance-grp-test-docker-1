@@ -11,7 +11,7 @@ steps:
     - |
         echo "testing stage"
         
-        GCP_TEMP_INSTANCE_NAME=akshaytemp6
+
         GCP_TEMP_SERVICE_AC=415800680409-compute@developer.gserviceaccount.com
         GCP_TEMP_TAG=akshaytemptag
         GCP_CUSTOM_IMAGE=akshayimage
