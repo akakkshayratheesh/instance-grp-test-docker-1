@@ -4,7 +4,7 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: "bash"
   env:
-  - 'GCP_TEMP_INSTANCE_NAME="akshaytemp6"'
+  - 'GCP_TEMP_INSTANCE_NAME=akshaytemp6'
 
   args:
     - "-c"
