@@ -21,7 +21,7 @@ steps:
         gcloud compute images create ${_GCP_INSTANCE_NAME}-$BUILD_ID --project=${_GCP_PROJECT_ID} --source-disk=${_GCP_TEMP_INSTANCE_NAME} --source-disk-zone=${_GCP_ZONE} --storage-location=${_GCP_STORAGE_LOCATION}
         
         gcloud compute instances delete ${_GCP_TEMP_INSTANCE_NAME} --zone=${_GCP_ZONE} --quiet
-            
+             
 
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: "bash"
